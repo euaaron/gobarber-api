@@ -7,13 +7,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "babel src --extensions \".j,.ts\" dist --copy-files",
-    "server:dev": "ts-node-dev --inspect  --transpile-only  --ignore-watch node_modules src/server.ts",
-    "server:prod": "tsc && node dist/server.js",
-    "start": "ts-node src/server.ts",
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
+    "server:dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+    "server:prod": "babel src --extensions \".js,.ts\" dist --copy-files && node dist/server.js",
+    "start": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "mirun": "ts-node-dev ./node_modules/typeorm/cli.js migration:run",
-    "mirevert": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert"
+    "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run",
+    "migration:revert": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -32,6 +32,8 @@
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/node": "^7.12.6",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-typescript": "^7.12.1",
     "@types/bcryptjs": "^2.4.2",
@@ -42,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-typescript-metadata": "^0.3.1",
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
