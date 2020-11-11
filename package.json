@@ -2,6 +2,9 @@
   "name": "gobarber-api",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "12.x"
+  },
   "license": "MIT",
   "scripts": {
     "build": "babel src --extensions \".j,.ts\" dist --copy-files",
