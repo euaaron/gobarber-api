@@ -1,10 +1,10 @@
 {
   "type": "postgres",
-  "host": "localhost",
+  "host": "motty.db.elephantsql.com",
   "port": 5432,
-  "username": "postgres",
-  "password": "docker",
-  "database": "gostack_gobarber",
+  "username": "fhoxhksc",
+  "password": "lT8YuhxlcW7-oJ4naez4fScjU7v7pyng",
+  "database": "fhoxhksc",
   "entities" : ["./src/models/*.ts"],
   "migrations": ["./src/database/migrations/*.ts"],
   "cli": {
