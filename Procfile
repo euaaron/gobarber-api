@@ -1,1 +1,1 @@
-web: bin/start-nginx node web.js
+web: node dist/server.js

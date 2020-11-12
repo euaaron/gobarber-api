@@ -2,21 +2,12 @@ import 'reflect-metadata';
 import express, { Request, Response, NextFunction } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
-import fs from 'fs';
 
 import routes from './routes';
 import { tmpFolder } from './config/upload';
 import AppError from './errors/AppError';
 
 import './database';
-
-fs.writeFile('/tmp/app-initialized', 'Ready to launch nginx', err => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.info('The file was saved!');
-  }
-});
 
 const app = express();
 
@@ -44,7 +35,7 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   });
 });
 
-app.app.listen('/tmp/nginx.socket', () => {
+app.listen(80, () => {
   // eslint-disable-next-line no-console
   console.log('🚀 Server started on port 3333.');
 });
