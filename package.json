@@ -1,7 +1,7 @@
 {
   "name": "gobarber-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/server.js",
   "engines": {
     "node": "12.x",
     "yarn": "1.22.x"
