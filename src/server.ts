@@ -10,7 +10,7 @@ import AppError from './errors/AppError';
 import './database';
 
 const app = express();
-const port = process.env.PORT || 80;
+const port = 80;
 const host = process.env.HOST || 'localhost';
 
 app.use(cors());
