@@ -7,11 +7,11 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
+    "build": "clear && rm -rf dist && babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "server:dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
-    "server:prod": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files && node dist/server.js",
-    "start": "ts-node src/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "prestart": "clear && rm -rf dist && babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
+    "start": "node dist/server.js",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js ",
     "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run",
     "migration:revert": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert"
   },
