@@ -11,6 +11,7 @@ import './database';
 
 const app = express();
 const port = process.env.PORT || 80;
+const host = process.env.HOST || 'localhost';
 
 app.use(cors());
 
@@ -36,7 +37,7 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   });
 });
 
-app.listen(port, () => {
+app.listen(`${host}:${port}`, () => {
   // eslint-disable-next-line no-console
   console.log(`🚀 Server started on port ${port}.`);
 });
