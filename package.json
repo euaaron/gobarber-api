@@ -7,9 +7,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "clear && rm -rf dist && babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "server:dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
-    "prestart": "clear && rm -rf dist && babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
+    "prestart": "rm -rf dist && babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "node dist/server.js",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js ",
     "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run",
