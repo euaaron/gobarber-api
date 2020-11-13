@@ -10,8 +10,7 @@ import AppError from './errors/AppError';
 import './database';
 
 const app = express();
-const port = 80;
-const host = process.env.HOST || 'localhost';
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 
@@ -37,7 +36,7 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   });
 });
 
-app.listen(`${host}:${port}`, () => {
+app.listen(port, () => {
   // eslint-disable-next-line no-console
   console.log(`🚀 Server started on port ${port}.`);
 });
