@@ -5,7 +5,7 @@
   "username": "fhoxhksc",
   "password": "lT8YuhxlcW7-oJ4naez4fScjU7v7pyng",
   "database": "fhoxhksc",
-  "entities" : ["./dist/models/*.js"],
+  "entities": ["./dist/models/*.js"],
   "migrations": ["./dist/database/migrations/*.js"],
   "cli": {
     "migrationsDir": "./src/database/migrations"
